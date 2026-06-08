@@ -61,7 +61,8 @@ a {
   color: var(--accent-dark);
 }
 
-.about-hero {
+.about-hero,
+.contact-hero {
   width: min(1120px, calc(100% - 32px));
   margin: 44px auto;
   display: grid;
@@ -95,20 +96,23 @@ a {
   text-transform: uppercase;
 }
 
-.about-hero img {
+.about-hero img,
+.contact-hero img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.team-section {
+.team-section,
+.contact-section {
   padding: 48px 0 64px;
   background: var(--surface);
 }
 
 .section-heading,
-.team-grid {
+.team-grid,
+.contact-layout {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
 }
@@ -158,6 +162,67 @@ a {
   color: var(--muted);
 }
 
+.contact-layout {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.contact-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.25rem;
+}
+
+.contact-card p {
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+.contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  padding: 12px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-list li:last-child {
+  border-bottom: 0;
+}
+
+.contact-list span {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.contact-list a {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.contact-image {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .site-footer {
   padding: 24px 16px;
   text-align: center;
@@ -172,7 +237,9 @@ a {
   }
 
   .about-hero,
-  .team-grid {
+  .contact-hero,
+  .team-grid,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
 
