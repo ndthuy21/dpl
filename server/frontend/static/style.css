@@ -1,0 +1,182 @@
+:root {
+  --ink: #1f2937;
+  --muted: #64748b;
+  --line: #d8dee9;
+  --surface: #f8fafc;
+  --accent: #0f766e;
+  --accent-dark: #115e59;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #ffffff;
+}
+
+a {
+  color: var(--accent-dark);
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.nav-bar {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--accent-dark);
+}
+
+.about-hero {
+  width: min(1120px, calc(100% - 32px));
+  margin: 44px auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-copy h1,
+.section-heading h2 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+.hero-copy h1 {
+  font-size: 3rem;
+}
+
+.hero-copy p:last-child {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.about-hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.team-section {
+  padding: 48px 0 64px;
+  background: var(--surface);
+}
+
+.section-heading,
+.team-grid {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.section-heading h2 {
+  max-width: 720px;
+  font-size: 2rem;
+}
+
+.team-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.team-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.team-card img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.team-card-body {
+  padding: 20px;
+}
+
+.team-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.role {
+  margin: 4px 0 12px;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.team-card-body p:not(.role) {
+  color: var(--muted);
+}
+
+.site-footer {
+  padding: 24px 16px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 760px) {
+  .nav-bar,
+  .about-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .about-hero,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.35rem;
+  }
+}
